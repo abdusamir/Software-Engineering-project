@@ -9,7 +9,7 @@ body {
   font-style: normal;
 }
 
-body .form {
+form {
 display: flexbox ;
 justify-content: space-between;
 justify-content: space-around;
