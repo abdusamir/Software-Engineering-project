@@ -1,0 +1,56 @@
+
+body {
+   
+        padding-left: 100px;
+        padding-right: 100px;
+        font-size: 20px;
+        line-height: 0.7;
+        font-weight: 500;
+        font-style:normal;
+    }
+
+form {
+    display: flexbox ;
+    justify-content: space-between;
+    justify-content: space-around;
+    border: 20px solid rgb(235, 208, 235);
+    border-top-width: 2px;
+border-left-width: 2px;
+border-bottom-width: 2px;
+border-right-width: 2px;
+padding-left: 10px;
+padding-right: 2px;
+padding-bottom: 2px;
+padding-top: 10px;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] ,input[type=date],input[type=email],input[type=tel]{
+    width: 70%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid rgb(235, 208, 235);
+    box-sizing: border-box;
+  }
+  
+  /* Set a style for all buttons */
+  form > .btn  {
+    background-color: #d363cd;
+    color: rgb(235, 208, 235);
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+   
+  }
+  
+  /* Add a hover effect for buttons */
+  button:hover {
+     background-color: #d363cd;
+    opacity: 0.8;
+  }
+ 
+                
+ 
