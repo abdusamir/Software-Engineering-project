@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>products</title>
+
+        <link rel="stylesheet" href="sidenav.css">
+    </head>
+    <body>
+        <div class="sidenav">
+        <button class="side_button">Brand</button>
+        <div>
+
+            <label class="contain">
+                <input type="radio" checked="checked" name="radio">
+                <span ></span>SamSong
+              </label>
+
+              <label class="contain">
+                <input type="radio" name="radio">
+                <span ></span>Apple
+              </label>
+              <label class="contain">
+                <input type="radio" name="radio">
+                <span ></span>HTC
+              </label>
+        </div>
+        <button class="side_button">Color</button>
+        <div>
+
+            <label class="contain">
+                <input type="radio" checked="checked" name="radio">
+                <span ></span>Black
+              </label>
+
+              <label class="contain">
+                <input type="radio" name="radio">
+                <span ></span>Gray
+              </label>
+              <label class="contain">
+                <input type="radio" name="radio">
+                <span ></span>white
+              </label>
+        </div>
+
+        <button class="side_button">Price</button>
+
+        <div class="slidecontainer">
+          <p style="color:blanchedalmond">From: <span id="demo"></span> $</p>
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+
+          <p style="color:blanchedalmond">To: <span id="demo2"></span> $</p>
+          <input type="range" min="1" max="100" value="50" class="slider" id="myRange2">
+        </div>
+        
+
+        <button class="apply_button">Apply</button>
+          </div>
+
+        <div>
+          <div class="column">
+            <div class="card" style="widows: 15px;">
+              <img src="phone1.jpg" alt="phone" style="width:25%;">
+              <div class="container">
+                <h2>Huawei Y6 Prime 2019 Dual Sim - 32 GB, 2 GB Ram, 4G LTE, Sapphire Blue</h2>
+                <p class="title">Mobile Phones</p>
+                <p>2,590  EGP</p>
+                <p><button class="button">VIEW</button></p>
+              </div>
+            </div>
+           </div>
+
+           <div class="column" style="margin-left: 20px;">
+            <div class="card" style="widows: 15px;">
+              <img src="phone1.jpg" alt="phone" style="width:25%;">
+              <div class="container">
+                <h2>Huawei Y6 Prime 2019 Dual Sim - 32 GB, 2 GB Ram, 4G LTE, Sapphire Blue</h2>
+                <p class="title">Mobile Phones</p>
+                <p>2,590  EGP</p>
+                <p><button class="button">VIEW</button></p>
+              </div>
+            </div>
+           </div>
+          </div>
+
+          <div>
+            <div class="column">
+              <div class="card" style="widows: 15px;">
+                <img src="phone1.jpg" alt="phone" style="width:25%;">
+                <div class="container">
+                  <h2>Huawei Y6 Prime 2019 Dual Sim - 32 GB, 2 GB Ram, 4G LTE, Sapphire Blue</h2>
+                  <p class="title">Mobile Phones</p>
+                  <p>2,590  EGP</p>
+                  <p><button class="button">VIEW</button></p>
+                </div>
+              </div>
+             </div>
+  
+             <div class="column" style="margin-left: 20px;">
+              <div class="card" style="widows: 15px;">
+                <img src="phone1.jpg" alt="phone" style="width:25%;">
+                <div class="container">
+                  <h2>Huawei Y6 Prime 2019 Dual Sim - 32 GB, 2 GB Ram, 4G LTE, Sapphire Blue</h2>
+                  <p class="title">Mobile Phones</p>
+                  <p>2,590  EGP</p>
+                  <p><button class="button">VIEW</button></p>
+                </div>
+              </div>
+             </div>
+            </div>
+          <script>
+            //for the appearance of div under brand
+            var acc = document.getElementsByClassName("side_button");
+            var i;
+            
+            for (i = 0; i < acc.length; i++) {
+              acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                  panel.style.display = "none";
+                } else {
+                  panel.style.display = "block";
+                }
+              });
+            }
+            //for the slider of price
+            var slider = document.getElementById("myRange");
+            var output = document.getElementById("demo");
+            var slider2 = document.getElementById("myRange2");
+            var output2 = document.getElementById("demo2");
+
+            output.innerHTML = slider.value;
+            output2.innerHTML = slider2.value;
+
+            slider.oninput = function() {
+              output.innerHTML = this.value;
+            }
+            slider2.oninput = function() {
+              output2.innerHTML = this.value;
+            }
+            </script>
+        
+    </body>
+</html>
