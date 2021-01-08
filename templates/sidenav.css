@@ -1,0 +1,145 @@
+.sidenav {
+    height: 100%;
+    width: 300px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: rgb(88, 23, 80);
+    overflow-x: hidden;
+    padding-top: 20px;
+    }
+
+
+    .sidenav a:hover {
+    color: #f1f1f1;
+    }
+
+    .side_button {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #818181;
+    text-align: center;
+    width: 200px;
+    
+    }
+    
+    .apply_button{
+    margin-top: 50px;
+    margin-left: 50px;
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: #e71414;
+
+    }
+
+    .contain{
+        display: block;
+        position: relative;
+        padding-left: 35px;
+        margin-bottom: 12px;
+        cursor: pointer;
+        font-size: 22px;
+        color: blanchedalmond;
+    }
+
+    @media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+    }
+
+  /*this part for styling price slider*/
+  .slidecontainer {
+    width: 150 px;
+  }
+
+  .slider {
+    -webkit-appearance: none;
+    width: 200px;
+    height: 10px;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+  }
+
+  .slider:hover {
+    opacity: 1;
+  }
+
+  .slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background: rgb(250, 129, 49);
+    cursor: pointer;
+  }
+  /*background: url('icon.png');*/
+  .slider::-moz-range-thumb {
+    width: 23px;
+    height: 24px;
+    border: 0;
+    background:   rgb(250, 129, 49);
+    cursor: pointer;
+  }
+  /*this part for styling product*/
+  html {
+  box-sizing: border-box;
+  
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+
+}
+.column {
+  display:inline-block;
+  width : 30%;
+  margin-bottom: 60px;
+  margin-left:300px;
+  padding: 0 8px; 
+}
+@media screen and (max-width: 650px) {
+  .column {
+    width: 100%;
+    display: block;
+  }
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  background-color: white;
+  width:400px;
+  border:solid;
+  border-color:purple;
+  border-radius:10px;
+}
+.container {
+  padding: 0 16px;
+}
+.container::after, .row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+.title {
+  color: grey;
+}
+.button {
+  border: none;
+  outline: 0;
+  display: inline-block;
+  padding: 8px;
+  color: white;
+  background-color: rgb(168, 99, 165);
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+}
+.button:hover {
+  background-color: purple;
+}
