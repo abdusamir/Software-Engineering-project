@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>My profile</title>
+        <h1>Welcome!</h1>
+      
+    </head>
+<link rel="stylesheet" href="buyer_profile.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+    <body>
+     
+
+        <div class="tab">
+            <button class="tablinks" onclick="openpart(event, 'account settings')" id="defaultOpen"><span class="glyphicon glyphicon-user"></span><b>  Account settings</b></button>
+            <button class="tablinks" onclick="openpart(event, 'orders')" ><span class="glyphicon glyphicon-shopping-cart"></span><b>  Orders</b></button>
+            <button class="tablinks" onclick="openpart(event, 'wishlist')"><span class="glyphicon glyphicon-bookmark"></span><b>  Wishlist</b></button>
+          </div>
+          
+          <div id="account settings" class="tabcontent">
+            <h3>Account settings</h3>
+            Name:<br>
+            Email:<br>
+            Number:<br>
+            Gender:<br>
+            Birthday:<br>
+            
+
+            <button type="button" class="goto_edit">Change Account settings</button>
+          </div>
+          
+          <div id="orders" class="tabcontent">
+            <h3>Orders</h3>
+            <div class="column">
+              <div class="card" style="widows: 15px;">
+                <img src="phone1.jpg" alt="phone" style="width:25%;">
+                <div class="container">
+                  <h2>Huawei Y6 Prime 2019 Dual Sim - 32 GB, 2 GB Ram, 4G LTE, Sapphire Blue</h2>
+                  <p class="title">Mobile Phones</p>
+                  <p>2,590  EGP</p>
+                  <p><button class="bn">VIEW</button></p>
+                </div>
+              </div>
+             </div>
+             
+          </div>
+          
+          <div id="wishlist" class="tabcontent">
+            <h3>Wishlist</h3>
+            <div class="column">
+              <div class="card" style="widows: 15px;">
+                <img src="phone1.jpg" alt="phone" style="width:25%;">
+                <div class="container">
+                  <h2>Huawei Y6 Prime 2019 Dual Sim - 32 GB, 2 GB Ram, 4G LTE, Sapphire Blue</h2>
+                  <p class="title">Mobile Phones</p>
+                  <p>2,590  EGP</p>
+                  <p><button class="bn">VIEW</button></p>
+                </div>
+              </div>
+             </div>
+          </div>
+      
+          <script>
+            function openpart(evt, partName) {
+              // Declare all variables
+              var i, tabcontent, tablinks;
+            
+              // Get all elements with class="tabcontent" and hide them
+              tabcontent = document.getElementsByClassName("tabcontent");
+              for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+              }
+            
+              // Get all elements with class="tablinks" and remove the class "active"
+              tablinks = document.getElementsByClassName("tablinks");
+              for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace("active", "");
+              }
+            
+              // Show the current tab, and add an "active" class to the link that opened the tab
+              document.getElementById(partName).style.display = "block";
+              evt.currentTarget.className += " active";
+            }
+            document.getElementById("defaultOpen").click();
+            </script>
+    </body>
+
+
+    

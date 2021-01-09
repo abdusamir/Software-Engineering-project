@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Help</title>
+        <h1>How We can help you</h1>
+    </head>
+<link rel="stylesheet" href="help.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <body>
+<label for form="example">Search for the seller you want to contact with</label>
+<form class="example" action="action_page.php">
+  <input type="text" placeholder="Enter the Name of the seller.." name="search">
+  <button type="submit">CHAT</button>
+</form>
+<div>
+<h1>Frequently Asked Questions</h1>
+<button class="accordion">Q: How can I order?</button>
+<div class="panel">
+  <p>A: You can order easily using our online platform.
+       When you find a product you need, you can add it to cart, login and go through the ordering process.</p>
+</div>
+
+<button class="accordion"> Q: What payment methods can I use?</button>
+<div class="panel">
+  <p>You can use whatever method you want also we support 
+      major credit cards.</p>
+</div>
+<button class="accordion">  Q: What are the delivery charges?</button>
+<div class="panel">
+  <p>
+    A: Delivery charges are dependent on the shipment requirements .
+    You can see the shipping fees on the checkout process before the payment is made.
+  </p>
+</div>
+<button class="accordion">  Q: When will my order be delivered to me?</button>
+<div class="panel">
+  <p>
+A:First, your order will be delivered from the seller to a local shipping company within 3 working days. Then, 
+the local shipping company will deliver your order to you within approximately 2-3 days.
+  </p>
+</div>
+<button class="accordion">  Q: Can I return a product?</button>
+<div class="panel">
+  <p>
+    A: If you want to return a product, please contact the seller. you can reach the seller through live chat. 
+  </p>
+</div>
+<button class="accordion">  Q: I didn't receive my order. What should I do?</button>
+<div class="panel">
+  <p>
+    A: If you did not receive your order on time, you can contact our customer representatives by the phone number or Email given in the content of “contact”.
+  </p>
+</div>
+<button class="accordion">  Q: I want to sell my products on the website </button>
+<div class="panel">
+  <p>
+    A: You can easily create a seller account and from there you can add products and view their progress.
+  </p>
+</div>
+<button class="accordion">  Q: How do I change my personal details or email address?</button>
+<div class="panel">
+  <p>
+    A: You can easily change all your information on your account.  Go to login page and log in,
+     then click “profile” and “account settings” then click “change Account settings”. Here you can change all your contact information.
+  </p>
+</div>
+
+<button class="accordion">  Q: How to contact customer service?</button>
+<div class="panel">
+  <p>
+    A:
+    phone number: +922-27785183 <br>
+    Email: support@eduonix
+</p>
+</div>
+
+</div>
+
+<script>
+    var acc = document.getElementsByClassName("accordion");
+    var i;
+    
+    for (i = 0; i < acc.length; i++) {
+      
+      acc[i].addEventListener("click", function() {
+        /* Toggle between adding and removing the "active" class,
+        to highlight the button that controls the panel */
+        this.classList.toggle("active");
+    
+        /* Toggle between hiding and showing the active panel */
+        var panel = this.nextElementSibling;
+        if (panel.style.display === "block") {
+          panel.style.display = "none";
+        } else {
+          panel.style.display = "block";
+        }
+    
+        if (panel.style.maxHeight) {
+          panel.style.maxHeight = null;
+        } else {
+          panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+      });
+      
+    }
+    
+    </script>
+        
+    
+
+
+
+</body>
