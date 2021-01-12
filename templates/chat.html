@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>chatting</title>
+
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+       <style>
+        * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    margin: 20px auto;
+  }
+  form {
+    padding: 20px 55px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  #wrapper
+   {
+    margin: 0 auto;
+    padding-bottom: 25px;
+    background: #eee;
+    width: 1000px;
+    height: 550px;
+    max-width: 100%;
+    border: 2px solid purple;
+    border-radius: 4px;
+  }
+  #chatbox {
+    text-align: left;
+    margin: 0 auto;
+    margin-bottom: 25px;
+    padding: 10px;
+    background: #fff;
+    height: 380px;
+    width: 900px;
+    border: 1px solid #a7a7a7;
+    overflow: auto;
+    border-radius: 4px;
+    border-bottom: 4px solid #a7a7a7;
+  }
+  #usermsg {
+    border-radius: 4px;
+    border: 1px solid #ff9800;
+    width: 750px;
+    height: 40px;
+    outline: none;
+  }
+  #submitmsg{
+    background: #ff9800;
+    border: 2px solid #e65100;
+    color:white;
+    padding: 4px 10px;
+    font-weight: bold;
+    border-radius: 4px;
+    width: 150px;
+  }
+  #menu {
+    padding: 15px 25px;
+    display: flex;
+  }
+  #menu p.welcome {
+    flex: 1;
+  }
+  a#exit {
+    color: white;
+    background: #c62828;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+  }
+        </style>
+
+    </head>
+        <div id="wrapper">
+            <div id="menu">
+                <p class="welcome"><b style="color: purple;">Welcome,</b></p>
+                <p class="logout"><a id="exit" href="#">Exit Chat</a></p>
+            </div>
+ 
+            <div id="chatbox"></div>
+            <form name="message" action="">
+                <input name="usermsg" type="text" id="usermsg" />
+                <input name="submitmsg" type="submit" id="submitmsg" value="Send" />
+            </form>
+        </div>
+        
+        <script type="text/javascript">
+            // jQuery Document
+            $(document).ready(function () {});
+            </script>
+
+<script type="text/javascript">
+    // jQuery Document
+    $(document).ready(function(){
+        //If user wants to end session
+        $("#exit").click(function(){
+            var exit = confirm("Are you sure you want to end the session?");
+            if(exit==true){window.location = 'index.php?logout=true';}      
+        });
+    });
+    </script>
+
