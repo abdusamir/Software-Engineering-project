@@ -1,0 +1,32 @@
+{%extends 'store/layout.html'%}
+{%block title%}
+Recommended
+{%endblock%}
+{%block body%}
+<br> <br> <br>
+<h1>Recommended items</h1>
+<br> <br> <br>
+{%for object in object_list%}
+<div class="column">
+    <div class="card" style="widows: 15px;">
+        <img src="{{object.imageURL}}" style="width:50%;">
+        <div class="container">
+
+            <h2>{{object.title}}</h2>
+
+            <p class="title">{{object.get_category_display}}</p>
+            <hr>
+            <button data-product="{{object.id}}" data-action="add" style="margin-bottom: 10px;"
+                class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+            {%if request.user.is_authenticated%}
+            <button data-product="{{object.id}}" data-action="add" style="margin-bottom: 10px;"
+                class="btn btn-outline-info add-btn update-wishlist">Add to Wishlist</button>
+            {%endif%}
+            <a style="margin-bottom: 10px;" class="btn btn-outline-success" href="#">View</a>
+            <h4 style="float:right;font-size: 20px;">{{object.price|floatformat:2}}</h4>
+
+        </div>
+    </div>
+</div>
+{%endfor%}
+{%endblock%}

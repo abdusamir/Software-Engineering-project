@@ -1,0 +1,67 @@
+{%extends 'store/layout.html'%}
+{%load static%}
+
+{%block title%}
+Home
+{%endblock%}
+{%block body%}
+    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel" style="margin-top:10px ;">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="{%static 'images/pic1.jpg'%}" class="d-block rounded mx-auto d-block" width="800" height="300" alt="shoping 1"
+                    class="d-block rounded mx-auto d-block">
+            </div>
+            <div class="carousel-item">
+                <img src="{%static 'images/pic2.jpg'%}" class="d-block rounded mx-auto d-block" width="800" height="300" alt="shoping 2"
+                    style="text-align: center">
+            </div>
+            <div class="carousel-item">
+                <img src="{%static 'images/pic3.jpg'%}" class="d-block rounded mx-auto d-block" width="800" height="300" alt="shoping 3"
+                    style="text-align: center">
+            </div>
+        </div>
+        <a class="carousel-control-prev " href="#carouselExampleControls" role="button" data-bs-slide="prev"
+            style="margin-left: 20%">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-bs-slide="next"
+            style="margin-right: 20%">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </a>
+    </div>
+    
+    <div style="text-align: center;">
+        <a style="margin-top: 20px;" class="btn btn-outline-dark" href="{%url 'store:tags' 'm'%}"><i class="fa fa-mobile"></i> Mobile & Tablets</a>
+        <a style="margin-top: 20px;" class="btn btn-outline-dark" href="{%url 'store:tags' 'g'%}"><i class="fa fa-gamepad"></i> Books & Games</button></a>
+        <a style="margin-top: 20px;" class="btn btn-outline-dark" href="{%url 'store:tags' 'c'%}"><i class="fab fa-windows"></i> Computer &Network</a>
+        <a style="margin-top: 20px;" class="btn btn-outline-dark" href="{%url 'store:tags' 's'%}"><i class="fa fa-tshirt"></i> Clothes & Fashion</a>
+          
+    </div>
+    
+    <div style="margin-top:50px">
+    {%for object in objects%}
+        <div class="column">
+            <div class="card" style="widows: 15px;">
+                <img src="{{object.imageURL}}"  style="width:100%;height: 20vw;">
+                <div class="container">
+                
+                    <h2>{{object.title}}</h2>
+                    
+                    <p class="title">{{object.get_category_display}}</p>
+                    <hr>
+                    <h4 style="float:right;font-size: 20px;">{{object.price|floatformat:2}} L.E.</h4>
+                    <br><br>
+                    <button data-product="{{object.id}}" data-action="add" style="margin-bottom: 10px;" class="btn btn-outline-secondary add-btn update-cart">Add to cart</button>
+                    {%if request.user.is_authenticated%}
+                    <button data-product="{{object.id}}" data-action="add" style="margin-bottom: 10px;" class="btn btn-outline-info add-btn update-wishlist" >Add to Wishlist</button>
+                    {%endif%}
+                    <a style="margin-bottom: 10px;" class="btn btn-outline-success" href="{%url 'store:product' object.id%}">View</a>
+                    
+                
+                </div>
+            </div>
+        </div>
+    {%endfor%}
+{%endblock%}

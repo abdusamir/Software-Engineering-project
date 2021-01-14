@@ -1,0 +1,87 @@
+{%extends 'store/layout.html'%}
+{%load static%}
+{%block title%}
+My Cart
+{%endblock%}
+{%block head%}
+<link rel="stylesheet" href="{% static 'css/cart.css'%}">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,500&display=swap" rel="stylesheet">
+<style>
+    .quantity{
+        display: inline-block;
+        font-weight: 700;
+        padding-right: 10px;
+    }
+    .chg-quantity{
+    height: 8px;
+	width: 12px;
+	cursor: pointer;
+	display: block;
+	margin-top: 5px;
+	transition:.1s;
+}
+
+.chg-quantity:hover{
+	opacity: .6;
+}
+
+
+</style>
+{%endblock%}
+
+{%block body%}
+<h1>Shopping Cart <ion-icon name="cart" style="margin-top: 20px;"></ion-icon></h1>
+        <div class ="small_container cart-page">
+            <table>
+                 
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            {%for item in items%}
+                <tr>
+                    <td>
+                        <div class="cart-info">
+                      
+                           <img src="{{item.product.imageURL}}" >
+                           <div>
+                               <p>{{item.product.title}}</p>
+                               <small>Price:{{item.product.price|floatformat:2}}L.E.</small><br>
+                            <button data-product="{{item.product.id}}" data-action="delete" style="margin-bottom: 10px;margin-top: 10px;"
+                                class="btn btn-outline-danger add-btn update-cart">Remove</button>
+
+                           </div> 
+                        
+                        </div>
+                    </td>
+                    
+                    <td><p class="quantity">{{item.quantity}}</p>
+                        <div class="quantity">
+                            <img data-product="{{item.product.id}}" data-action="add" src="{%static 'images/arrowup.png'%}" class="chg-quantity update-cart" alt="">
+                            <img data-product="{{item.product.id}}" data-action="remove" src="{%static 'images/arrowdown.png'%}" class="chg-quantity update-cart" alt="">
+                        </div>
+                    </td>
+                    <td>{{item.get_total}}L.E.</td>
+                </tr>
+                {%endfor%}
+            </table>
+
+            <div class="total-price">
+                <table>
+                    <tr>
+                        <td>Total items</td>
+                        <td>{{order.get_cart_items}}</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td>{{order.get_cart_total}}L.E.</td>
+                    </tr>
+                </table>
+            </div>
+            
+        </div>
+<a href="{%url 'store:checkout'%}" class ="checkout">Proceed Checkout</a>
+<script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
+{%endblock%}
