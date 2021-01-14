@@ -1,0 +1,40 @@
+{%extends 'store/layout.html'%}
+{%load static%}
+
+
+        {%block title%}Edit your profile{%endblock%}
+{%block head%}
+<link rel="stylesheet" href="{%static 'css/edit_profile.css'%}">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+{%endblock%}
+
+ 
+ {%block body%}
+<dev>
+    <h1 class="title"><b>Account settings</b> </h1>
+<form class="form1" method="POST" enctype="multipart/form-data">
+    {%csrf_token%}
+    <br>
+    <img src="{{request.user.customer.profile_pic.url}}"  class="avatar" alt="Avatar" style="float:left;  border-radius: 50%;" width="70" height="70">
+    
+        <br><br><br><br><br><br>
+            <label for="first_name">Edit your First name:</label><br>
+            {{form.first_name}} <br>
+            <label for="last_name">Edit your Last name:</label><br>
+            {{form.last_name}} <br>
+            <label for="email">Edit your Email:</label><br>
+            {{form.email}} <br>
+            <label for="number">Edit your Number:</label><br>
+            {{form.phone}} <br>
+            
+      <label>
+                <input type="checkbox" checked="checked" name="subscribe"> Register in the Newsletter
+              </label> <br> <br>
+            <label for="number">Upload a new profile picture</label><br> <br> <br>
+            {{form.profile_pic}} <br> <br>
+  <br>      
+            <button type="submit" class="btn" >Edit</button>
+    </form>
+    </dev> 
+
+{%endblock%}

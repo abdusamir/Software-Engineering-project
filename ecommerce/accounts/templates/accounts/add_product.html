@@ -1,0 +1,35 @@
+{%extends 'store/layout.html'%}
+{%load static%}
+
+    {%block title%}
+        Add product
+    {%endblock%}
+    {%block head%}
+    <link rel="stylesheet" href="{% static 'css/add_product.css'%}">
+    {%endblock%}
+    {%block body%}
+
+              <dev>
+                  <br><br><br>
+                <h1 class="title">Product Specifications </h1>
+            <form class="form3" method="POST" enctype="multipart/form-data">
+                {%csrf_token%}
+                        <label for="name">Product Name:</label><br>
+                        {{form.title}} <br>
+                        <label for="Price">Price:</label><br>
+                        {{form.price}}<br>
+                        <label for="category">Product category:</label><br>
+                        {{form.category}} <br> <br>
+                        <label for="description">Add an optional description:</label><br>
+                        {{form.description}} <br><br>
+                        <label for="description">Enter the number of availble pieces:</label><br>
+                        {{form.pieces}} <br><br>
+                        <label for="image">Add an image for the product</label><br> <br>
+                        {{form.image}} <br>
+                        <button type="submit" class="btn">Add</button>
+                </form>
+                </dev> 
+    {%endblock%}
+
+
+
